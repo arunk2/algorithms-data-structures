@@ -20,7 +20,7 @@ Writing a wrapper on the proc apis will help you to achieve the same. PFB code s
 ```
 
 //Execute a given shell command and return the STDOUT and STDERR data seperately
-function _shell_exec($cmd, &$stdout=null, &$stderr=null) {
+function my_shell_exec($cmd, &$stdout=null, &$stderr=null) {
 		
 		$proc = proc_open($cmd,[
 				1 => ['pipe','w'],
@@ -37,7 +37,7 @@ function _shell_exec($cmd, &$stdout=null, &$stderr=null) {
 //Execute the delete command
 $cmd = "rm arun.txt";
 echo "Executing command : ".$cmd;
-$result = _shell_exec($cmd, $stdout, $stderr);
+$result = my_shell_exec($cmd, $stdout, $stderr);
 echo "\nResult = ".$result;
 echo "\nstdout = ".$stdout;
 echo "\nstderr = ".$stderr;
