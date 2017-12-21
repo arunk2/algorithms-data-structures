@@ -36,14 +36,14 @@ class Trie:
 
 
 tree = Trie()
-tree.add_word('foo', 'bar', 'baz', 'barz')
+tree.add_words(['foo', 'bar', 'baz', 'barz'])
 print tree
 """
 {'b': {'a': {'r': {'_end_': '_end_', 'z': {'_end_': '_end_'}}, 
              'z': {'_end_': '_end_'}}}, 
  'f': {'o': {'o': {'_end_': '_end_'}}}}
  """
- 
+
 print check_word('baz')
 # True
 print check_word('barz')
