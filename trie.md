@@ -6,8 +6,8 @@ According to wikipedia: In computer science, a trie, or prefix tree, is an order
 ```
 class Trie:
   def __init__(self):
-     word_end = '_end_'
-     root = {}
+     self.word_end = '_end_'
+     self.root = {}
      
   def add_word(self, word):
      self.add_words([word])
@@ -17,7 +17,7 @@ class Trie:
          current_dict = self.root
          for letter in word:
              current_dict = current_dict.setdefault(letter, {})
-         current_dict[word_end] = word_end
+         current_dict[self.word_end] = self.word_end
 
  
   def check_word(self, word):
@@ -28,7 +28,7 @@ class Trie:
          else:
              return False
      else:
-         if _end in current_dict:
+         if self.word_end in current_dict:
              return True
          else:
              return False
