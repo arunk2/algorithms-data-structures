@@ -25,7 +25,7 @@ For our experiment we created 3 different tables with:
 	) ENGINE=InnoDB;
 
 
-	CREATE TABLE `consolidated1` (
+	CREATE TABLE `consolidated_single` (
 	  `consolidated_id` int(11) NOT NULL AUTO_INCREMENT,
 	  `pub_id` int(11) DEFAULT NULL,
 	  `cp_id` int(11) DEFAULT NULL,
@@ -35,12 +35,12 @@ For our experiment we created 3 different tables with:
 	  PRIMARY KEY (`consolidated_id`)
 	) ENGINE=InnoDB;
 
-	CREATE INDEX idx_1 ON consolidated1 (pub_id);
-	CREATE INDEX idx_2 ON consolidated1 (cp_id);
-	CREATE INDEX idx_3 ON consolidated1 (ro_id);
-	CREATE INDEX idx_4 ON consolidated1 (country_id);
+	CREATE INDEX idx_1 ON consolidated_single (pub_id);
+	CREATE INDEX idx_2 ON consolidated_single (cp_id);
+	CREATE INDEX idx_3 ON consolidated_single (ro_id);
+	CREATE INDEX idx_4 ON consolidated_single (country_id);
 
-	CREATE TABLE `consolidated2` (
+	CREATE TABLE `consolidated_multi` (
 	  `consolidated_id` int(11) NOT NULL AUTO_INCREMENT,
 	  `pub_id` int(11) DEFAULT NULL,
 	  `cp_id` int(11) DEFAULT NULL,
@@ -50,7 +50,7 @@ For our experiment we created 3 different tables with:
 	  PRIMARY KEY (`consolidated_id`)
 	) ENGINE=InnoDB;
 
-CREATE INDEX idx_1 ON consolidated2 (pub_id, cp_id, ro_id, country_id);
+CREATE INDEX idx_1 ON consolidated_multi (pub_id, cp_id, ro_id, country_id);
 
 ```
   
